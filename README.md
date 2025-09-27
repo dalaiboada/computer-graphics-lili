@@ -1,26 +1,29 @@
-#  Algoritmos de Computaci n Gr fica
+# Algoritmos de Computación Gráfica
 
-Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales de gr ficos por computadora utilizando JavaScript puro. La interfaz web permite explorar cada algoritmo a trav s de explicaciones detalladas, visualizaciones interactivas y el c digo fuente correspondiente.
+Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales de gráficos por computadora utilizando JavaScript puro. La interfaz web permite explorar cada algoritmo a través de explicaciones detalladas, visualizaciones interactivas y el código fuente correspondiente.
 
-##  Caracter sticas
+## Características
 
-1.  **L nea con Interpolaci n de Color**
-   - Implementaci n del algoritmo DDA (Digital Differential Analyzer)
-   - Interpolaci n de color RGB entre dos colores cualesquiera
-   - Control de grosor de l nea
-   - Visualizaci n interactiva
+1. **Línea con Interpolación de Color**
 
-2.  **Algoritmo de Elipse por Punto Medio***
-   - Implementaci n eficiente usando simetr a de cuadrantes
-   - C lculo preciso de puntos en la elipse
-   - Visualizaci n clara del proceso de dibujo
+- Implementación del algoritmo DDA (Digital Differential Analyzer)
+- Interpolación de color RGB entre dos colores cualesquiera
+- Control de grosor de línea
+- Visualización interactiva
 
-3.  **Fractal Floral***
-   - Generaci n recursiva de patrones florales
-   - Control de profundidad de recursi n
-   - Visualizaci n de la estructura fractal
+2. **Algoritmo de Elipse por Punto Medio***
 
-##  Estructura del Proyecto
+- Implementación eficiente usando simetría de cuadrantes
+- Cáculo preciso de puntos en la elipse
+- Visualización clara del proceso de dibujo
+
+3. **Fractal Floral***
+
+- Generación recursiva de patrones florales
+- Control de profundidad de recursión
+- Visualización de la estructura fractal
+
+## Estructura del Proyecto
 
 ```
 .
@@ -34,48 +37,47 @@ Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales d
 └── plataformas.mp4     # Video demostrativo
 ```
 
-##  Explicaci n de los Algoritmos
+## Explicaci n de los Algoritmos
 
-### 1. Algoritmo DDA para L neas con Interpolaci n de Color
+### 1. Algoritmo DDA para Líneas con Interpolación de Color
 
-El algoritmo DDA (Digital Differential Analyzer) es un algoritmo de conversi n de l neas que calcula posiciones de p xels en intervalos iguales a lo largo de una l nea. En esta implementaci n:
+El algoritmo DDA (Digital Differential Analyzer) es un algoritmo de conversión de líneas que calcula posiciones de píxels en intervalos iguales a lo largo de una línea. En esta implementación:
 
-- Se calculan incrementos fraccionarios para suavizar la l nea
-- Se implementa interpolaci n lineal de color entre dos colores RGB
-- Se permite controlar el grosor de la l nea
+- Se calculan incrementos fraccionarios para suavizar la línea
+- Se implementa interpolación lineal de color entre dos colores RGB
+- Se permite controlar el grosor de la línea
 
 ### 2. Algoritmo de Elipse por Punto Medio
 
-Este algoritmo dibuja una elipse utilizando la simetr a de los cuatro cuadrantes. La implementaci n:
+Este algoritmo dibuja una elipse utilizando la simetría de los cuatro cuadrantes. La implementación:
 
-- Divide el dibujo en dos regiones para un trazado ptimo
-- Utiliza la ecuaci n de la elipse para determinar los p xels a dibujar
-- Aprovecha la simetr a para reducir c lculos
+- Divide el dibujo en dos regiones para un trazado óptimo
+- Utiliza la ecuación de la elipse para determinar los píxels a dibujar
+- Aprovecha la simetría para reducir cálculos
 
 ### 3. Fractal Floral
 
 Un fractal recursivo que genera patrones florales mediante:
 
-- Dibujo recursivo de c rculos y elipses
-- Rotaci n y escalado de p talos
-- Control de profundidad para la recursi n
+- Dibujo recursivo de círculos y elipses
+- Rotación y escalado de pétalos
+- Control de profundidad para la recursión
 
-##  C mo Usar
+## C mo Usar
 
 1. Abre el archivo `index.html` en un navegador web moderno
-2. Navega por las diferentes secciones usando las pesta as
+2. Navega por las diferentes secciones usando las pestañas
 3. Para cada algoritmo:
-   - Revisa la explicaci n te rica
-   - Explora el c digo fuerte
-   - Observa la demostraci n visual
+   - Revisa la explicación teórica
+   - Explora el código fuerte
+   - Observa la demostración visual
 
-##  Notas de Implementaci n
+## Notas de Implementación
 
 - El proyecto utiliza JavaScript moderno (ES6+)
 - No se requieren dependencias externas
-- El c digo est  organizado en m dulos para mejorar mantenibilidad
+- El código está  organizado en módulos para mejorar mantenibilidad
 
+## Créditos
 
-##  Cr ditos
-
-Desarrollado para la clase de Computaci n Gr fica - UGMA
+Desarrollado para la clase de Computación Gráfica - UGMA
