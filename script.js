@@ -1,3 +1,8 @@
+import EJERCICIO_1 from './ejercicios/ejercicio1.js';
+import EJERCICIO_2 from './ejercicios/ejercicio2.js';
+import EJERCICIO_3 from './ejercicios/ejercicio3.js';
+
+
 function showTab(algoritmo, tabType) {
     
     const contents = document.querySelectorAll(`#${algoritmo}-codigo, #${algoritmo}-demo, #${algoritmo}-explicacion`);
@@ -37,3 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+const Ejercicios = [EJERCICIO_1, EJERCICIO_2, EJERCICIO_3];
+
+const $codigoEjercicios = document.querySelectorAll('code');
+try {
+    $codigoEjercicios.forEach((codigo, index) => {
+        codigo.textContent = Ejercicios[index];
+        console.log(Ejercicios[index]);
+    });
+} catch (error) {
+    console.log("Error al mostrar el código: " + error);
+}
+
