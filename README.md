@@ -11,13 +11,13 @@ Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales d
 - Control de grosor de línea
 - Visualización interactiva
 
-2. **Algoritmo de Elipse por Punto Medio***
+2. **Algoritmo de Elipse por Punto Medio**
 
 - Implementación eficiente usando simetría de cuadrantes
 - Cáculo preciso de puntos en la elipse
 - Visualización clara del proceso de dibujo
 
-3. **Fractal Floral***
+3. **Fractal Floral**
 
 - Generación recursiva de patrones florales
 - Control de profundidad de recursión
@@ -27,13 +27,13 @@ Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales d
 
 ```
 .
-├── index.html          # P gina principal de la aplicaci n
-├── script.js           # L gica principal de la aplicaci n
+├── index.html          # Página principal de la aplicacián
+├── script.js           # Lógica principal de la aplicacián
 ├── styles.css          # Estilos CSS para la interfaz de usuario
 ├── ejercicios/
-│   ├── ejercicio1.js   # Implementaci n del algoritmo de l nea
-│   ├── ejercicio2.js   # Implementaci n del algoritmo de elipse
-│   └── ejercicio3.js   # Implementaci n del fractal floral
+│   ├── ejercicio1.js   # Implementación del algoritmo de línea
+│   ├── ejercicio2.js   # Implementación del algoritmo de elipse
+│   └── ejercicio3.js   # Implementación del fractal floral
 └── plataformas.mp4     # Video demostrativo
 ```
 
@@ -63,7 +63,7 @@ Un fractal recursivo que genera patrones florales mediante:
 - Rotación y escalado de pétalos
 - Control de profundidad para la recursión
 
-## C mo Usar
+## Cómo Usar
 
 1. Abre el archivo `index.html` en un navegador web moderno
 2. Navega por las diferentes secciones usando las pestañas
@@ -81,3 +81,11 @@ Un fractal recursivo que genera patrones florales mediante:
 ## Créditos
 
 Desarrollado para la clase de Computación Gráfica - UGMA
+
+## TO DO:
+
+* [ ] Resolver ejercicios
+* [ ] Buscar las definiciones de cada algoritmo
+* [ ] Implementar las soluciones en c++ o python
+* [ ] Grabar la demostración
+
