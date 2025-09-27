@@ -12,19 +12,23 @@
             <p class="page-subtitle">Demostraciones interactivas de los principales algoritmos</p>
         </header>
 
-        <!-- Demo 1: Línea con Interpolación de Color -->
+        <!-- DEMO 1: Línea con Interpolación de Color -->
         <section class="demo-container">
+
+            <!-- Título --->
             <div class="demo-header">
                 <div class="demo-title">1. Línea con Interpolación RGB y Grosor Dinámico</div>
                 <div class="demo-description">Algoritmo DDA/Bresenham con transición de color y control de grosor</div>
             </div>
             
+            <!-- Botones de Tab --->
             <div class="demo-tabs">
                 <button class="tab-button active">📚 Explicación</button>
                 <button class="tab-button">📝 Código</button>
                 <button class="tab-button">🎥 Demostración</button>
             </div>
             
+            <!-- Explicación --->
             <div id="linea-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
@@ -41,86 +45,118 @@
                 </div>
             </div>
 
+            <!-- Código fuente --->
             <div id="linea-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
                 </pre>
             </div>
             
+            <!-- Video demostrativo --->
             <div id="linea-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/linea-thumb.jpg">
                         <source src="plataformas.mp4" type="video/mp4">
                     </video>
+
                     <div class="video-caption">Demostración: Línea con interpolación de color RGB y grosor variable</div>
                 </div>
             </div>
             
         </section>
         
-        <!-- Demo 2: Algoritmo de Elipse -->
+        <!-- DEMO 2: Algoritmo de Elipse -->
         <section class="demo-container">
+            
+            <!-- Título --->
             <div class="demo-header">
                 <div class="demo-title">2. Algoritmo de Elipse con Punto Medio</div>
                 <div class="demo-description">Implementación eficiente usando simetría de cuadrantes</div>
             </div>
             
+            <!-- Botones de Tab --->
             <div class="demo-tabs">
                 <button class="tab-button active">📚 Explicación</button>
                 <button class="tab-button">📝 Código</button>
                 <button class="tab-button">🎥 Demostración</button>
             </div>
             
+            <!-- Explicación --->
             <div id="elipse-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
-                    <p><strong>Objetivo:</strong> Dibujar una línea entre dos puntos con transición suave de color y grosor configurable.</p>
+                    <p><strong>Objetivo:</strong> Dibuja la elipse con semiejes a y b usando el algoritmo del punto medio</p>
+                    
                     <br>
+                    <p>El <strong>Algoritmo del Punto Medio para circunferencias</strong> es un algoritmo usado para determinar los puntos necesarios para rasterizar una circunferencia.</p>
+                    <p>Aprovecha la simetría de las elipses para calcular solo un cuadrante y reflejar los puntos en los otros tres.</p>
+                    
+                    <img src="midpoint_circle_algorithm_animation_256px.gif" alt="Ejemplo Visual del Algoritmo del Punto Medio" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
 
-                    <h4>Características implementadas:</h4>
+                    <h4>Algoritmo</h4>
                     <ul class="feature-list">
-                        <li><strong>Algoritmo DDA</strong>: Calcula incrementos fraccionarios para suavizar la línea</li>
-                        <li><strong>Interpolación RGB</strong>: Transición lineal entre dos colores cualquiera</li>
-                        <li><strong>Grosor dinámico</strong>: Expansión de píxeles alrededor de la línea base</li>
+                        <li>Se capturan el radio r y el centro de la circunferencia (xc, yc).</li>
+                        <li>Se obtiene el primer punto de la circunferencia centrada en origen (xc, yc) como (0, r).</li>
+                        <li>Se calcula el valor inicial del parámetro de decisión como p0=5/4 - r.
+                            Para k=0 hasta x>=y incrementa k
+                                Si pk < 0 
+                                *Siguiente punto de la circunferencia con centro (0,0) es (xk+1, yk).
+                                *pk+1=pk+2xk+1+1.
+                                Sino
+                                    *Siguiente punto de la circunferencia con centro (0,0) es (xk+1, yk-1).
+                                *pk+1=pk+2xk+1+1-2yk+1.
+                                //Donde 2xk+1=2xk+2  y  2yk+1=2yk-2
+                        </li>
+                        <li>Se determinan los puntos de simetría para los otros siete octantes.</li>
+                        <li>Se mueve cada posición del pixel calculada (x,y) a la trayectoria circular centrada en (xc, yc) 
+   y trazamos los valores de las coordenadas: x=x+xc y y=y+yc.</li>
+                        <li>Fin del para</li>
                     </ul>
                     <br>
                 </div>
             </div>
 
+            <!-- Código fuente --->
             <div id="elipse-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
                 </pre>
             </div>
             
+            <!-- Video demostrativo --->
             <div id="elipse-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/elipse-thumb.jpg">
                         <source src="plataformas.mp4" type="video/mp4">
                     </video>
+
                     <div class="video-caption">Demostración: Generación de elipses con diferentes parámetros</div>
                 </div>
             </div>
 
         </section>
         
-        <!-- Demo 3: Figura Fractal -->
+        <!-- DEMO 3: CIRCUNFERENCIAS -->
         <section class="demo-container">
+
+            <!-- Título --->
             <div class="demo-header">
-                <div class="demo-title">3. Figura Fractal Tipo Flor</div>
-                <div class="demo-description">Patrón recursivo usando circunferencias y elipses concéntricas</div>
+                <div class="demo-title">3. Circunferencias</div>
+                <div class="demo-description">Determinar si puntos forman una circunferencia (centro y radio)</div>
             </div>
             
+            <!-- Botones de Tab --->
             <div class="demo-tabs">
                 <button class="tab-button active">📚 Explicación</button>
                 <button class="tab-button">📝 Código</button>
                 <button class="tab-button">🎥 Demostración</button>
             </div>
             
+            <!-- Explicación --->
             <div id="fractal-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
-                    <p><strong>Objetivo:</strong> Dibujar una línea entre dos puntos con transición suave de color y grosor configurable.</p>
+                    <p><strong>Objetivo:</strong> Dado un conjunto de puntos, determinar si forman una circunferencia y calcular su centro y radio</p>
                     <br>
 
                     <h4>Características implementadas:</h4>
@@ -133,17 +169,20 @@
                 </div>
             </div>
 
+            <!-- Código fuente --->
             <div id="fractal-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
                 </pre>
             </div>
             
+            <!-- Video demostrativo --->
             <div id="fractal-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls>
                         <source src="plataformas.mp4" type="video/mp4">
                     </video>
+
                     <div class="video-caption">Demostración: Generación de patrones fractales tipo flor</div>
                 </div>
             </div>

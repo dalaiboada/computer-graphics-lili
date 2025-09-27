@@ -88,4 +88,3 @@ Desarrollado para la clase de Computación Gráfica - UGMA
 * [ ] Buscar las definiciones de cada algoritmo
 * [ ] Implementar las soluciones en c++ o python
 * [ ] Grabar la demostración
-
