@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos de Gráficos - Demostraciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <header style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #333;">🎨 Algoritmos de Computación Gráfica</h1>
+            <p style="color: #666; font-size: 1.2em;">Demostraciones interactivas de los principales algoritmos</p>
+        </header>
+
+        <!-- Demo 1: Línea con Interpolación de Color -->
+        <div class="demo-container">
+            <div class="demo-header">
+                <div class="demo-title">1. Línea con Interpolación RGB y Grosor Dinámico</div>
+                <div class="demo-description">Algoritmo DDA/Bresenham con transición de color y control de grosor</div>
+            </div>
+            
+            <div class="demo-tabs">
+                <button class="tab-button">📚 Explicación</button>
+                <button class="tab-button active">📝 Código</button>
+                <button class="tab-button">🎥 Demostración</button>
+            </div>
+            
+            <div id="linea-codigo" class="demo-content active">
+                <pre class="code-block">
+                    <code>
+                        // Algoritmo DDA con interpolación de color
+                        function drawLineWithColor(x1, y1, x2, y2, color1, color2, thickness) {
+                            const points = [];
+                            const dx = x2 - x1;
+                            const dy = y2 - y1;
+                            const steps = Math.max(Math.abs(dx), Math.abs(dy));
+                            
+                            // Interpolación de color
+                            const colors = interpolateRGB(color1, color2, steps);
+                            
+                            const xInc = dx / steps;
+                            const yInc = dy / steps;
+                            
+                            let x = x1, y = y1;
+                            
+                            for (let i = 0; i <= steps; i++) {
+                                points.push({
+                                    x: Math.round(x),
+                                    y: Math.round(y),
+                                    color: colors[i]
+                                });
+                                x += xInc;
+                                y += yInc;
+                            }
+                            
+                            return applyThickness(points, thickness);
+                        }
+
+                        function interpolateRGB(color1, color2, steps) {
+                            const colors = [];
+                            const [r1, g1, b1] = color1;
+                            const [r2, g2, b2] = color2;
+                            
+                            for (let i = 0; i <= steps; i++) {
+                                const t = i / steps;
+                                const r = Math.round(r1 + (r2 - r1) * t);
+                                const g = Math.round(g1 + (g2 - g1) * t);
+                                const b = Math.round(b1 + (b2 - b1) * t);
+                                colors.push(`rgb(${r}, ${g}, ${b})`);
+                            }
+                            
+                            return colors;
+
+                        }
+                    </code>
+                </pre>
+            </div>
+            
+            <div id="linea-demo" class="demo-content">
+                <div class="video-container">
+                    <video class="demo-video" controls poster="thumbnails/linea-thumb.jpg">
+                        <source src="plataformas.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Demostración: Línea con interpolación de color RGB y grosor variable</div>
+                </div>
+            </div>
+            
+            <div id="linea-explicacion" class="demo-content">
+                <div style="padding: 30px; line-height: 1.6;">
+                    <h3>📖 Explicación del Algoritmo</h3>
+                    <p><strong>Objetivo:</strong> Dibujar una línea entre dos puntos con transición suave de color y grosor configurable.</p>
+                    <br>
+
+                    <h4>🔧 Características implementadas:</h4>
+                    <ul>
+                        <li><strong>Algoritmo DDA</strong>: Calcula incrementos fraccionarios para suavizar la línea</li>
+                        <li><strong>Interpolación RGB</strong>: Transición lineal entre dos colores cualquiera</li>
+                        <li><strong>Grosor dinámico</strong>: Expansión de píxeles alrededor de la línea base</li>
+                        <li><strong>Control interactivo</strong>: Modificación en tiempo real de parámetros</li>
+                    </ul>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 2: Algoritmo de Elipse -->
+        <div class="demo-container">
+            <div class="demo-header">
+                <div class="demo-title">2. Algoritmo de Elipse con Punto Medio</div>
+                <div class="demo-description">Implementación eficiente usando simetría de cuadrantes</div>
+            </div>
+            
+            <div class="demo-tabs">
+                <button class="tab-button">📚 Explicación</button>
+                <button class="tab-button active">📝 Código</button>
+                <button class="tab-button">🎥 Demostración</button>
+            </div>
+            
+            <div id="elipse-codigo" class="demo-content active">
+                <pre class="code-block"><code>// Algoritmo de elipse por punto medio
+function drawEllipseMidpoint(xc, yc, a, b) {
+    const points = [];
+    let x = 0;
+    let y = b;
+    
+    // Región 1
+    let d1 = (b * b) - (a * a * b) + (0.25 * a * a);
+    
+    while ((a * a * (y - 0.5)) > (b * b * (x + 1))) {
+        plotEllipsePoints(xc, yc, x, y, points);
+        
+        if (d1 < 0) {
+            d1 += b * b * (2 * x + 3);
+        } else {
+            d1 += b * b * (2 * x + 3) + a * a * (-2 * y + 2);
+            y--;
+        }
+        x++;
+    }
+    
+    // Región 2
+    let d2 = (b * b * (x + 0.5) * (x + 0.5)) + 
+             (a * a * (y - 1) * (y - 1)) - 
+             (a * a * b * b);
+    
+    while (y >= 0) {
+        plotEllipsePoints(xc, yc, x, y, points);
+        
+        if (d2 < 0) {
+            d2 += b * b * (2 * x + 2) + a * a * (-2 * y + 3);
+            x++;
+        } else {
+            d2 += a * a * (-2 * y + 3);
+        }
+        y--;
+    }
+    
+    return points;
+}</code></pre>
+            </div>
+            
+            <div id="elipse-demo" class="demo-content">
+                <div class="video-container">
+                    <video class="demo-video" controls poster="thumbnails/elipse-thumb.jpg">
+                        <source src="videos/elipse-demo.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="video-caption">Demostración: Generación de elipses con diferentes parámetros</div>
+                </div>
+            </div>
+            
+            <div id="elipse-explicacion" class="demo-content">
+                <div style="padding: 30px; line-height: 1.6;">
+                    <h3>📖 Explicación del Algoritmo</h3>
+                    <p><strong>Objetivo:</strong> Dibujar elipses eficientemente usando el algoritmo del punto medio.</p>
+                    <p>El algoritmo aprovecha la simetría de las elipses para calcular solo un cuadrante y reflejar los puntos en los otros tres.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 3: Figura Fractal -->
+        <div class="demo-container">
+            <div class="demo-header">
+                <div class="demo-title">3. Figura Fractal Tipo Flor</div>
+                <div class="demo-description">Patrón recursivo usando circunferencias y elipses concéntricas</div>
+            </div>
+            
+            <div class="demo-tabs">
+                <button class="tab-button active">📝 Código</button>
+                <button class="tab-button">🎥 Demostración</button>
+            </div>
+            
+            <div id="fractal-codigo" class="demo-content active">
+                <pre class="code-block"><code>// Algoritmo fractal floral
+function createFlowerFractal(x, y, baseRadius, depth, maxDepth) {
+    if (depth > maxDepth) return;
+    
+    // Dibujar círculo base
+    drawCircle(x, y, baseRadius);
+    
+    // Dibujar pétalos (elipses rotadas)
+    const petals = 6;
+    for (let i = 0; i < petals; i++) {
+        const angle = (i * 2 * Math.PI) / petals;
+        const petalX = x + Math.cos(angle) * baseRadius * 1.5;
+        const petalY = y + Math.sin(angle) * baseRadius * 1.5;
+        
+        drawEllipse(petalX, petalY, baseRadius * 0.6, baseRadius * 0.3, angle);
+        
+        // Llamada recursiva para cada pétalo
+        createFlowerFractal(petalX, petalY, baseRadius * 0.4, depth + 1, maxDepth);
+    }
+}</code></pre>
+            </div>
+            
+            <div id="fractal-demo" class="demo-content">
+                <div class="video-container">
+                    <video class="demo-video" controls>
+                        <source src="videos/fractal-demo.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="video-caption">Demostración: Generación de patrones fractales tipo flor</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje para videos no disponibles -->
+        <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 5px; margin-top: 30px;">
+            <strong>📹 Nota:</strong> Los videos de demostración se incluirán posteriormente. Por ahora, los contenedores están listos para cuando grabes las demostraciones.
+        </div>
+    </div>
+
+    <script src="./script.js" type="module"></script>
+</body>
+</html>
