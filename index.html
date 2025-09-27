@@ -6,26 +6,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
+    <main>
         <header class="page-header">
             <h1 class="page-title">Algoritmos de Computación Gráfica</h1>
             <p class="page-subtitle">Demostraciones interactivas de los principales algoritmos</p>
         </header>
 
         <!-- Demo 1: Línea con Interpolación de Color -->
-        <div class="demo-container">
+        <section class="demo-container">
             <div class="demo-header">
                 <div class="demo-title">1. Línea con Interpolación RGB y Grosor Dinámico</div>
                 <div class="demo-description">Algoritmo DDA/Bresenham con transición de color y control de grosor</div>
             </div>
             
             <div class="demo-tabs">
-                <button class="tab-button">📚 Explicación</button>
-                <button class="tab-button active">📝 Código</button>
+                <button class="tab-button active">📚 Explicación</button>
+                <button class="tab-button">📝 Código</button>
                 <button class="tab-button">🎥 Demostración</button>
             </div>
             
-            <div id="linea-codigo" class="demo-content active">
+            <div id="linea-explicacion" class="demo-content active">
+                <div class="explanation-content">
+                    <h3 class="explanation-title">Explicación del Algoritmo</h3>
+                    <p><strong>Objetivo:</strong> Dibujar una línea entre dos puntos con transición suave de color y grosor configurable.</p>
+                    <br>
+
+                    <h4>Características implementadas:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Algoritmo DDA</strong>: Calcula incrementos fraccionarios para suavizar la línea</li>
+                        <li><strong>Interpolación RGB</strong>: Transición lineal entre dos colores cualquiera</li>
+                        <li><strong>Grosor dinámico</strong>: Expansión de píxeles alrededor de la línea base</li>
+                    </ul>
+                    <br>
+                </div>
+            </div>
+
+            <div id="linea-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
                 </pre>
@@ -40,7 +56,22 @@
                 </div>
             </div>
             
-            <div id="linea-explicacion" class="demo-content">
+        </section>
+        
+        <!-- Demo 2: Algoritmo de Elipse -->
+        <section class="demo-container">
+            <div class="demo-header">
+                <div class="demo-title">2. Algoritmo de Elipse con Punto Medio</div>
+                <div class="demo-description">Implementación eficiente usando simetría de cuadrantes</div>
+            </div>
+            
+            <div class="demo-tabs">
+                <button class="tab-button active">📚 Explicación</button>
+                <button class="tab-button">📝 Código</button>
+                <button class="tab-button">🎥 Demostración</button>
+            </div>
+            
+            <div id="elipse-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
                     <p><strong>Objetivo:</strong> Dibujar una línea entre dos puntos con transición suave de color y grosor configurable.</p>
@@ -55,22 +86,8 @@
                     <br>
                 </div>
             </div>
-        </div>
-        
-        <!-- Demo 2: Algoritmo de Elipse -->
-        <div class="demo-container">
-            <div class="demo-header">
-                <div class="demo-title">2. Algoritmo de Elipse con Punto Medio</div>
-                <div class="demo-description">Implementación eficiente usando simetría de cuadrantes</div>
-            </div>
-            
-            <div class="demo-tabs">
-                <button class="tab-button">📚 Explicación</button>
-                <button class="tab-button active">📝 Código</button>
-                <button class="tab-button">🎥 Demostración</button>
-            </div>
-            
-            <div id="elipse-codigo" class="demo-content active">
+
+            <div id="elipse-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
                 </pre>
@@ -79,32 +96,16 @@
             <div id="elipse-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/elipse-thumb.jpg">
-                        <source src="videos/elipse-demo.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
+                        <source src="plataformas.mp4" type="video/mp4">
                     </video>
                     <div class="video-caption">Demostración: Generación de elipses con diferentes parámetros</div>
                 </div>
             </div>
 
-            <div id="elipse-explicacion" class="demo-content">
-                <div class="explanation-content">
-                    <h3 class="explanation-title">Explicación del Algoritmo</h3>
-                    <p><strong>Objetivo:</strong> Dibujar una línea entre dos puntos con transición suave de color y grosor configurable.</p>
-                    <br>
-
-                    <h4>Características implementadas:</h4>
-                    <ul class="feature-list">
-                        <li><strong>Algoritmo DDA</strong>: Calcula incrementos fraccionarios para suavizar la línea</li>
-                        <li><strong>Interpolación RGB</strong>: Transición lineal entre dos colores cualquiera</li>
-                        <li><strong>Grosor dinámico</strong>: Expansión de píxeles alrededor de la línea base</li>
-                    </ul>
-                    <br>
-                </div>
-            </div>
-        </div>
+        </section>
         
         <!-- Demo 3: Figura Fractal -->
-        <div class="demo-container">
+        <section class="demo-container">
             <div class="demo-header">
                 <div class="demo-title">3. Figura Fractal Tipo Flor</div>
                 <div class="demo-description">Patrón recursivo usando circunferencias y elipses concéntricas</div>
@@ -116,22 +117,6 @@
                 <button class="tab-button">🎥 Demostración</button>
             </div>
             
-            <div id="fractal-codigo" class="demo-content">
-                <pre class="code-block">
-                    <code></code>
-                </pre>
-            </div>
-            
-            <div id="fractal-demo" class="demo-content">
-                <div class="video-container">
-                    <video class="demo-video" controls>
-                        <source src="videos/fractal-demo.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                    <div class="video-caption">Demostración: Generación de patrones fractales tipo flor</div>
-                </div>
-            </div>
-
             <div id="fractal-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
@@ -147,13 +132,29 @@
                     <br>
                 </div>
             </div>
-        </div>
+
+            <div id="fractal-codigo" class="demo-content">
+                <pre class="code-block">
+                    <code></code>
+                </pre>
+            </div>
+            
+            <div id="fractal-demo" class="demo-content">
+                <div class="video-container">
+                    <video class="demo-video" controls>
+                        <source src="plataformas.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Demostración: Generación de patrones fractales tipo flor</div>
+                </div>
+            </div>
+
+        </section>
 
         <!-- Mensaje para videos no disponibles -->
         <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 5px; margin-top: 30px;">
             <strong>📹 Nota:</strong> Los videos de demostración se incluirán posteriormente. Por ahora, los contenedores están listos para cuando grabemos las demostraciones.
         </div>
-    </div>
+    </main>
 
     <script src="./script.js" type="module"></script>
 </body>
