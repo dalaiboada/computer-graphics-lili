@@ -41,6 +41,21 @@
                         <li><strong>Interpolación RGB</strong>: Transición lineal entre dos colores cualquiera</li>
                         <li><strong>Grosor dinámico</strong>: Expansión de píxeles alrededor de la línea base</li>
                     </ul>
+
+                    <h4>Algoritmo DDA:</h4>
+                    <ul class="feature-list">
+                        <li>Calculamos dx y dy (diferencias en x e y).</li>
+                        <li>Determinamos los pasos según la mayor diferencia.</li>
+                        <li>Calculamos incrementos en x e y por paso.</li>            
+                        <li>Iteramos, dibujando un círculo en cada punto con:</li>
+                        <li>Color: Interpolamos el canal B de 0 a 255.</li>             
+                        <li>Grosor: Interpolamos el radio de 3 a 20 píxeles.</li>               
+                    </ul>
+
+                    <h4>Requerimientos de Demostración</h4>
+                    <ul class="feature-list">
+                        <li>Tener <strong>Python</strong> instalado: Este algotirmo está desarrollado en Python</li>
+                        <li>Instalar <strong>pygame</strong></li>
                     <br>
                 </div>
             </div>
@@ -56,7 +71,7 @@
             <div id="linea-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/linea-thumb.jpg">
-                        <source src="plataformas.mp4" type="video/mp4">
+                        <source src="demo_ejercicio_1.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: Línea con interpolación de color RGB y grosor variable</div>
@@ -89,8 +104,14 @@
                     
                     <br>
                     <p>El <strong>Algoritmo del Punto Medio para circunferencias</strong> es un algoritmo usado para determinar los puntos necesarios para rasterizar una circunferencia.</p>
-                    <p>Aprovecha la simetría de las elipses para calcular solo un cuadrante y reflejar los puntos en los otros tres.</p>
-                    
+                    <p>Y al igual que el <strong>algoritmo de Bresenham para líneas</strong>, utiliza pura aritmética entera para ser muy eficiente</p>
+                    <p>El objetivo del algoritmo es, para un punto (x,y) ya dibujado, decidir cuál de los dos píxeles posibles es el siguiente a dibujar</p>
+
+                    <br>
+                    <p>Este ejercicio es muy similar a la circunferencia, pero con dos radios distintos</p>
+                    <p>Se aprovecha la simetría de las elipses. Una elipse es simétrica en dos ejes, lo que nos permite calcular solo los puntos para una octava parte del contorno y luego reflejar esos puntos para completar la figura.</p>
+                    <br>
+
                     <img src="midpoint_circle_algorithm_animation_256px.gif" alt="Ejemplo Visual del Algoritmo del Punto Medio" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
 
                     <h4>Algoritmo</h4>
@@ -111,8 +132,17 @@
                         <li>Se mueve cada posición del pixel calculada (x,y) a la trayectoria circular centrada en (xc, yc) 
    y trazamos los valores de las coordenadas: x=x+xc y y=y+yc.</li>
                         <li>Fin del para</li>
+
+                        <li>Dada una elipse con centro (xc,yc) y radios a (eje x) y b (eje y):</li>
+                        <li>Comienza en (x=0,y=b) en el primer cuadrante.</li>
+                        <li>Calcula un valor de decisión inicial.</li>
+                        <li>En cada paso, evalúa el signo de un nuevo parámetro de decisión para elegir entre mover el píxel hacia el este (E) o hacia el sureste (SE).
+</li>
+                        <li>Refleja el píxel elegido en los otros tres cuadrantes.</li>
+                        
                     </ul>
                     <br>
+                    <div id="post-container"></div>
                 </div>
             </div>
 
@@ -120,6 +150,7 @@
             <div id="elipse-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
+                    
                 </pre>
             </div>
             
@@ -193,7 +224,11 @@
         <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 5px; margin-top: 30px;">
             <strong>📹 Nota:</strong> Los videos de demostración se incluirán posteriormente. Por ahora, los contenedores están listos para cuando grabemos las demostraciones.
         </div>
+
     </main>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script> --> 
+    
 
     <script src="./script.js" type="module"></script>
 </body>

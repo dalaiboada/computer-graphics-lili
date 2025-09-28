@@ -49,4 +49,3 @@ try {
 } catch (error) {
     console.log("Error al mostrar el código: " + error);
 }
-

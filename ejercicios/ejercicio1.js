@@ -1,48 +1,83 @@
 export const EJERCICIO_1 = `
-// Algoritmo DDA con interpolación de color
+import pygame
+import sys
 
-function drawLineWithColor(x1, y1, x2, y2, color1, color2, thickness) {
-const points = [];
-const dx = x2 - x1;
-const dy = y2 - y1;
-const steps = Math.max(Math.abs(dx), Math.abs(dy));
-                            
-// Interpolación de color
-const colors = interpolateRGB(color1, color2, steps);
-                            
-const xInc = dx / steps;
-const yInc = dy / steps;
+# Inicializar Pygame
+pygame.init()
 
-let x = x1, y = y1;
-                            
-for (let i = 0; i <= steps; i++) {
-  points.push({
-    x: Math.round(x),
-    y: Math.round(y),
-    color: colors[i]
-  });
-    x += xInc;
-    y += yInc;
-  }
-                            
-  return applyThickness(points, thickness);
-}
+# Configurar la ventana
+WIDTH, HEIGHT = 800, 800
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Ejercicio 01")
 
-function interpolateRGB(color1, color2, steps) {
-  const colors = [];
-  const [r1, g1, b1] = color1;
-  const [r2, g2, b2] = color2;
-                            
-  for (let i = 0; i <= steps; i++) {
-    const t = i / steps;
-    const r = Math.round(r1 + (r2 - r1) * t);
-    const g = Math.round(g1 + (g2 - g1) * t);
-    const b = Math.round(b1 + (b2 - b1) * t);
-    colors.push(\`rgb(\${r}, \${g}, \${b})\`);
-  }
-    
-  return colors;
-}
+# Colores iniciales y finales
+RED = (255, 0, 0)
+MAGENTA = (255, 0, 255)
+
+# Puntos de la línea
+x1, y1 = 100, 100
+x2, y2 = 700, 700
+
+# Grosor inicial y final
+min_thickness = 3
+max_thickness = 20
+
+
+# Algoritmo DDA
+def draw_dda_line(x1, y1, x2, y2):
+    # Calcular diferencias
+    dx = x2 - x1
+    dy = y2 - y1
+
+    # Calcular pasos (usamos la mayor diferencia)
+    steps = max(abs(dx), abs(dy))
+
+    if steps == 0:
+        return
+
+    # Incrementos por paso
+    x_inc = dx / steps
+    y_inc = dy / steps
+
+    # Inicializar coordenadas
+    x, y = x1, y1
+
+    # Dibujar píxeles
+    for i in range(steps + 1):
+        # Interpolación de color (solo cambia B de 0 a 255)
+        b_value = int(255 * (i / steps))  # De 0 a 255
+        color = (255, 0, b_value)
+
+        # Interpolación de grosor
+        thickness = min_thickness + (max_thickness - min_thickness) * (i / steps)
+
+        # Dibujar un círculo en cada punto para simular grosor
+        pygame.draw.circle(screen, color, (int(x), int(y)), int(thickness))
+
+        # Avanzar al siguiente píxel
+        x += x_inc
+        y += y_inc
+
+
+# Fondo blanco
+screen.fill((155, 155, 155))
+
+# Dibujar la línea
+draw_dda_line(x1, y1, x2, y2)
+
+# Actualizar pantalla
+pygame.display.flip()
+
+# Bucle principal
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+# Cerrar Pygame
+pygame.quit()
+sys.exit()
 `;
 
 export default EJERCICIO_1;
