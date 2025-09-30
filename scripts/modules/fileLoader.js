@@ -5,7 +5,7 @@
  */
 async function leerArchivoEjercicio(nEjercicio) {
     try {
-        const archivo = await fetch(`/ejercicios/ejercicio${nEjercicio+1}/ejercicio-${nEjercicio+1}.py`);
+        const archivo = await fetch(`./ejercicios/ejercicio${nEjercicio+1}/ejercicio-${nEjercicio+1}.py`);
         if (!archivo.ok) {
             throw new Error(`Error al leer el archivo: ${archivo.status}`);
         }
