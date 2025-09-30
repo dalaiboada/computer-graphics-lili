@@ -1,0 +1,60 @@
+/* Contenedor de demostración */
+.demo-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado de demostración */
+.demo-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.demo-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.demo-description {
+  font-size: 1em;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Contenido de explicación */
+.explanation-content {
+  padding: 25px;
+  line-height: 1.7;
+  background: white;
+}
+
+.explanation-title {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+/* Lista de características */
+.feature-list {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.5;
+}

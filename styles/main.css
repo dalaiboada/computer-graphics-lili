@@ -1,0 +1,16 @@
+/**
+ * Archivo principal de estilos
+ * Importa todos los módulos CSS del proyecto
+ */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+/* Módulos */
+@import 'modules/base.css';
+@import 'modules/header.css';
+@import 'modules/demo-container.css';
+@import 'modules/tabs.css';
+@import 'modules/code-block.css';
+@import 'modules/video.css';
+@import 'modules/utils.css';
