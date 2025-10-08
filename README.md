@@ -1,90 +1,201 @@
-# Algoritmos de Computación Gráfica
+# Algoritmos de Computación Gráfica - Proyecto Educativo UGMA
 
-Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales de gráficos por computadora utilizando JavaScript puro. La interfaz web permite explorar cada algoritmo a través de explicaciones detalladas, visualizaciones interactivas y el código fuente correspondiente.
+Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales de gráficos por computadora utilizando diferentes tecnologías de programación. Cada algoritmo incluye una aplicación interactiva con interfaz gráfica para facilitar el aprendizaje y experimentación.
 
-## Características
+## 🎯 Objetivos del Proyecto
 
-1. **Línea con Interpolación de Color**
+- **Demostrar** algoritmos clásicos de gráficos computacionales
+- **Comparar** diferentes enfoques de implementación (Python vs C++)
+- **Proporcionar** herramientas interactivas para el aprendizaje
+- **Documentar** el proceso paso a paso con explicaciones detalladas
 
-- Implementación del algoritmo DDA (Digital Differential Analyzer)
-- Interpolación de color RGB entre dos colores cualesquiera
-- Control de grosor de línea
-- Visualización interactiva
+## 📋 Algoritmos Implementados
 
-2. **Algoritmo de Elipse por Punto Medio**
+### 1. Línea con Interpolación RGB y Grosor Dinámico
 
-- Implementación eficiente usando simetría de cuadrantes
-- Cáculo preciso de puntos en la elipse
-- Visualización clara del proceso de dibujo
+**Tecnología:** Python + Pygame + pygame_gui
 
-3. **Fractal Floral**
+**Características:**
+- ✅ Algoritmo DDA (Digital Differential Analyzer)
+- ✅ Interpolación de color RGB entre dos colores
+- ✅ Control dinámico de grosor de línea (1-20 píxeles)
+- ✅ Interfaz gráfica interactiva con validación de entrada
+- ✅ Área de dibujo separada del panel de controles
 
-- Generación recursiva de patrones florales
-- Control de profundidad de recursión
-- Visualización de la estructura fractal
-
-## Estructura del Proyecto
-
-```
-.
-├── index.html          # Página principal de la aplicacián
-├── script.js           # Lógica principal de la aplicacián
-├── styles.css          # Estilos CSS para la interfaz de usuario
-├── ejercicios/
-│   ├── ejercicio1.js   # Implementación del algoritmo de línea
-│   ├── ejercicio2.js   # Implementación del algoritmo de elipse
-│   └── ejercicio3.js   # Implementación del fractal floral
-└── plataformas.mp4     # Video demostrativo
-```
-
-## Explicaci n de los Algoritmos
-
-### 1. Algoritmo DDA para Líneas con Interpolación de Color
-
-El algoritmo DDA (Digital Differential Analyzer) es un algoritmo de conversión de líneas que calcula posiciones de píxels en intervalos iguales a lo largo de una línea. En esta implementación:
-
-- Se calculan incrementos fraccionarios para suavizar la línea
-- Se implementa interpolación lineal de color entre dos colores RGB
-- Se permite controlar el grosor de la línea
+**Ubicación:** `ejercicios/ejercicio1/ejercicio-1.py`
 
 ### 2. Algoritmo de Elipse por Punto Medio
 
-Este algoritmo dibuja una elipse utilizando la simetría de los cuatro cuadrantes. La implementación:
+**Tecnología:** Python + Pygame
 
-- Divide el dibujo en dos regiones para un trazado óptimo
-- Utiliza la ecuación de la elipse para determinar los píxels a dibujar
-- Aprovecha la simetría para reducir cálculos
+**Características:**
+- ✅ Implementación eficiente usando simetría de cuadrantes
+- ✅ Cálculo preciso de puntos en la elipse
+- ✅ Algoritmo del punto medio optimizado
+- ✅ Visualización clara del proceso de dibujo
+- ✅ Uso de colores para identificar cuadrantes
 
-### 3. Fractal Floral
+**Ubicación:** `ejercicios/ejercicio2/ejercicio-2.py`
 
-Un fractal recursivo que genera patrones florales mediante:
+### 3. Análisis de Circunferencias
 
-- Dibujo recursivo de círculos y elipses
-- Rotación y escalado de pétalos
-- Control de profundidad para la recursión
+**Tecnología:** C++ (nativo)
 
-## Cómo Usar
+**Características:**
+- ✅ Verificación de colinealidad de puntos
+- ✅ Cálculo de centro y radio de circunferencia
+- ✅ Validación de pertenencia de puntos a la circunferencia
+- ✅ Manejo eficiente de estructuras de datos
+- ✅ Implementación compilada para máximo rendimiento
 
-1. Abre el archivo `index.html` en un navegador web moderno
-2. Navega por las diferentes secciones usando las pestañas
-3. Para cada algoritmo:
-   - Revisa la explicación teórica
-   - Explora el código fuerte
-   - Observa la demostración visual
+**Ubicación:** `ejercicios/ejercicio3/ejercicio-3.cpp`
 
-## Notas de Implementación
+## 🖥️ Interfaz Web Educativa
 
-- El proyecto utiliza JavaScript moderno (ES6+)
-- No se requieren dependencias externas
-- El código está  organizado en módulos para mejorar mantenibilidad
+**Tecnología:** HTML5 + CSS3 + JavaScript (módulos ES6)
 
-## Créditos
+**Características:**
+- ✅ Presentación organizada por pestañas (Explicación/Código/Demostración)
+- ✅ Sistema de navegación intuitivo
+- ✅ Integración de recursos multimedia (videos, imágenes)
+- ✅ Diseño responsivo y accesible
+- ✅ Arquitectura modular de código
 
-Desarrollado para la clase de Computación Gráfica - UGMA
+**Ubicación:** `index.html`, `scripts/`, `styles/`
 
-## TO DO:
+## 📁 Estructura del Proyecto
 
-* [ ] Resolver ejercicios
-* [ ] Buscar las definiciones de cada algoritmo
-* [ ] Implementar las soluciones en c++ o python
-* [ ] Grabar la demostración
+```
+computer-graphics-lili/
+├── 📄 index.html                    # Página principal educativa
+├── 📄 README.md                     # Esta documentación
+├── 🎨 styles/                       # Hojas de estilo CSS
+│   ├── main.css                     # Estilos principales
+│   └── modules/                     # Estilos modulares
+│       ├── base.css
+│       ├── code-block.css
+│       ├── demo-container.css
+│       ├── header.css
+│       ├── tabs.css
+│       ├── utils.css
+│       └── video.css
+├── ⚙️ scripts/                      # Código JavaScript
+│   ├── main.js                      # Punto de entrada principal
+│   └── modules/                     # Funcionalidades modulares
+│       ├── fileLoader.js            # Cargador de archivos
+│       └── tabs.js                  # Sistema de pestañas
+├── 📚 ejercicios/                   # Implementaciones prácticas
+│   ├── ejercicio1/                  # Línea con interpolación RGB
+│   │   ├── ejercicio-1.py           # Código fuente principal
+│   │   └── demo_ejercicio-1.mp4     # Video demostrativo
+│   ├── ejercicio2/                  # Algoritmo de elipse
+│   │   ├── ejercicio-2.py           # Código fuente principal
+│   │   ├── ejercicio_2.py           # Versión alternativa
+│   │   └── midpoint_circle_algorithm_animation_full.gif
+│   └── ejercicio3/                  # Análisis de circunferencias
+│       ├── ejercicio-3.cpp          # Código fuente principal
+│       └── ejercicio_3.exe          # Ejecutable compilado
+└── .vscode/                         # Configuración del editor
+```
+
+## 🚀 Cómo Usar
+
+### Aplicaciones Interactivas (Python)
+
+**Requisitos:**
+- Python 3.7+
+- Pygame (`pip install pygame`)
+- pygame_gui (`pip install pygame-gui`)
+
+**Ejecución:**
+```bash
+cd ejercicios/ejercicio1/
+python ejercicio-1.py
+```
+
+```bash
+cd ejercicios/ejercicio2/
+python ejercicio-2.py
+```
+
+### Aplicación C++
+
+**Compilación:**
+```bash
+cd ejercicios/ejercicio3/
+g++ ejercicio-3.cpp -o ejercicio_3.exe
+```
+
+**Ejecución:**
+```bash
+./ejercicio_3.exe
+```
+
+### Interfaz Web
+
+1. Abrir `index.html` en navegador moderno
+2. Navegar por las diferentes secciones usando las pestañas
+3. Revisar explicaciones teóricas
+4. Examinar código fuente
+5. Ver demostraciones en video
+
+## 📚 Recursos de Aprendizaje
+
+### Algoritmo DDA (Digital Differential Analyzer)
+- **Ventajas:** Suavizado de líneas, fácil implementación
+- **Aplicación:** Líneas con gradientes de color
+- **Complejidad:** O(n) donde n es la longitud de la línea
+
+### Algoritmo del Punto Medio para Elipses
+- **Ventajas:** Eficiencia usando aritmética entera
+- **Aplicación:** Dibujo preciso de elipses y círculos
+- **Complejidad:** O(a*b) donde a,b son semiejes
+
+### Análisis Geométrico de Circunferencias
+- **Ventajas:** Precisión matemática, aplicación directa
+- **Aplicación:** Validación de conjuntos de puntos
+- **Complejidad:** O(n) para n puntos
+
+## 🔧 Tecnologías Utilizadas
+
+| Tecnología | Uso | Ejercicio |
+|------------|-----|-----------|
+| **Python** | Implementación interactiva | 1, 2 |
+| **C++** | Cálculo eficiente | 3 |
+| **Pygame** | Gráficos 2D | 1, 2 |
+| **HTML5/CSS3** | Interfaz educativa | Web |
+| **JavaScript** | Funcionalidad web | Web |
+
+## 🎓 Aspectos Educativos
+
+- **Aprendizaje progresivo** de algoritmos gráficos
+- **Comparación** entre diferentes lenguajes de programación
+- **Comprensión** de conceptos matemáticos subyacentes
+- **Desarrollo** de habilidades prácticas de implementación
+- **Documentación** clara y estructurada
+
+## 📈 Mejoras Futuras
+
+- [ ] Implementar algoritmo de Bresenham para líneas
+- [ ] Agregar más algoritmos de relleno (flood fill, scanline)
+- [ ] Desarrollar versión web interactiva en Canvas API
+- [ ] Crear comparativas de rendimiento entre algoritmos
+- [ ] Agregar modo de depuración paso a paso
+
+## 👨‍🏫 Créditos
+
+**Desarrollado para:**
+- Curso de Computación Gráfica
+- Universidad UGMA
+- Año académico 2024-2025
+
+**Características destacadas:**
+- ✅ Implementaciones funcionales y documentadas
+- ✅ Interfaces gráficas intuitivas
+- ✅ Código fuente comentado
+- ✅ Recursos multimedia educativos
+- ✅ Arquitectura modular y mantenible
+
+---
+
+*Este proyecto demuestra la aplicación práctica de conceptos teóricos de gráficos por computadora mediante implementaciones concretas y herramientas educativas interactivas.*
