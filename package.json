@@ -1,0 +1,23 @@
+{
+  "name": "computer-graphics-lili",
+  "version": "1.0.0",
+  "description": "Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales de gráficos por computadora utilizando diferentes tecnologías de programación. Cada algoritmo incluye una aplicación interactiva con interfaz gráfica para facilitar el aprendizaje y experimentación.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalaiboada/computer-graphics-lili.git"
+  },
+  "keywords": [],
+  "author": "Dalai Boada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalaiboada/computer-graphics-lili/issues"
+  },
+  "homepage": "https://github.com/dalaiboada/computer-graphics-lili#readme",
+  "dependencies": {
+    "highlight.js": "^11.11.1"
+  }
+}
