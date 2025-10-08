@@ -3,9 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algoritmos de Gráficos - Demostraciones</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <main>
         <header class="page-header">
@@ -72,7 +71,7 @@
             <div id="linea-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/linea-thumb.jpg">
-                        <source src="./ejercicios/ejercicio1/demo_ejercicio-1.mp4" type="video/mp4">
+                        <source src="demo_ejercicio_1.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: Línea con interpolación de color RGB y grosor variable</div>
@@ -82,6 +81,11 @@
         </section>
         
         <!-- DEMO 2: Algoritmo de Elipse -->
+        <!-- TODOLIST: 
+            1. Actualizar código
+            2. Actualizar video
+            3. Terminar la explicación
+        -->
         <section class="demo-container">
             
             <!-- Título --->
@@ -113,7 +117,7 @@
                     <p>Se aprovecha la simetría de las elipses. Una elipse es simétrica en dos ejes, lo que nos permite calcular solo los puntos para una octava parte del contorno y luego reflejar esos puntos para completar la figura.</p>
                     <br>
 
-                    <img src="./ejercicios/ejercicio2/midpoint_circle_algorithm_animation_full.gif" alt="Ejemplo Visual del Algoritmo del Punto Medio">
+                    <img src="/computer-graphics-lili/ejercicios/ejercicio2/midpoint_circle_algorithm_animation_full.gif" alt="Ejemplo Visual del Algoritmo del Punto Medio" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
 
                     <h4>Algoritmo</h4>
                     <ul class="feature-list">
@@ -159,7 +163,7 @@
             <div id="elipse-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/elipse-thumb.jpg">
-                        <source src="./ejercicios/ejercicio2/demo_ejercicio-2.mp4" type="video/mp4">
+                        <source src="plataformas.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: Generación de elipses con diferentes parámetros</div>
@@ -212,7 +216,7 @@
             <div id="fractal-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls>
-                        <source src="./ejercicios/ejercicio3/demo_ejercicio-3.mp4" type="video/mp4">
+                        <source src="plataformas.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: Generación de patrones fractales tipo flor</div>
@@ -222,14 +226,15 @@
         </section>
 
         <!-- Mensaje para videos no disponibles -->
-        <div class="notification">
+        <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 5px; margin-top: 30px;">
             <strong>📹 Nota:</strong> Los videos de demostración se incluirán posteriormente. Por ahora, los contenedores están listos para cuando grabemos las demostraciones.
         </div>
 
     </main>
     
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script> --> 
-        <!-- Cargar el módulo principal -->
-        <script type="module" src="./scripts/main.js"></script>
-    </body>
+    
+
+    <script src="./script.js" type="module"></script>
+</body>
 </html>
