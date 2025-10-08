@@ -156,7 +156,7 @@
             <div id="elipse-codigo" class="demo-content">
                 <pre class="code-block">
                     <code></code>
-                    
+                  
                 </pre>
             </div>
             
@@ -164,7 +164,7 @@
             <div id="elipse-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls poster="thumbnails/elipse-thumb.jpg">
-                        <source src="plataformas.mp4" type="video/mp4">
+                        <source src="./ejercicios/ejercicio2/demo_ejercicio-2.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: Generación de elipses con diferentes parámetros</div>
@@ -174,6 +174,9 @@
         </section>
         
         <!-- DEMO 3: CIRCUNFERENCIAS -->
+         <!-- TODOLIST:
+            1. Subir video
+        -->
         <section class="demo-container">
 
             <!-- Título --->
@@ -193,14 +196,60 @@
             <div id="fractal-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
-                    <p><strong>Objetivo:</strong> Dado un conjunto de puntos, determinar si forman una circunferencia y calcular su centro y radio</p>
+                    <p>Su estructura es que define un punto en el plano con coordenadas X y Y.</p>
                     <br>
 
-                    <h4>Características implementadas:</h4>
+                    <h4>Sus funciones claves son: </h4>
+                    <ol class="feature-list">
+                        <li>Verifica si 3 puntos a,b y c están alineados, es decir, si son colineales.</li>
+                        <li>Usa el determinante de área del triángulo formado por los 3 puntos.</li>
+                        <li>Si el área es casi cero, los puntos son colineales.</li>
+                        <li>Luego calcula el centro y radio de la circunferencia que pasa por 3 puntos no colineales y usa fórmulas geométricas para encontrar centro y radio.</li>
+                        <li>Verifica si un punto p está sobre la circunferencia definida por centro y radio.</li>
+                        <li>Calcula la distancia entre p, el centro y compara con el radio.</li>
+                    </ol>
+                    <br>
+
+                    <h3>Lógica</h3>
+
+                    <!-- aqui -->
+                    <h4>En su entrada:</h4>
                     <ul class="feature-list">
-                        <li><strong>Algoritmo DDA</strong>: Calcula incrementos fraccionarios para suavizar la línea</li>
-                        <li><strong>Interpolación RGB</strong>: Transición lineal entre dos colores cualquiera</li>
-                        <li><strong>Grosor dinámico</strong>: Expansión de píxeles alrededor de la línea base</li>
+                        <li>Pide al usuario el número de puntos n.</li>
+                        <li>Si n&lt;3, no se puede definir una circunferencia.</li>
+                    </ul>
+                    <br>
+
+                    <!-- aqui -->
+                    <h4>En su lectura de puntos:</h4>
+                    <ul class="feature-list">
+                        <li>Guarda los puntos en un vector&lt;punto&gt;.</li>
+                    </ul>
+                    <br>
+
+                    <h4>Verificación de colinealidad:</h4>
+                    <ul class="feature-list">
+                        <li>Comprueba si los primeros 3 puntos son colineales.</li>
+                        <li>Si no lo son, no se puede definir una circunferencia.</li>
+                    </ul>
+                    <br>
+
+                    <h4>Cálculo de circunferencia:</h4>
+                    <ul class="feature-list">
+                        <li>Calcula el centro y radio usando los primeros 3 puntos.</li>
+                    </ul>
+                    <br>
+
+                    <h4>Verificación de pertenencias:</h4>
+                    <ul class="feature-list">
+                        <li>Recorre los puntos restantes y verifica si está sobre la circunferencia.</li>
+                        <li>Si alguno no lo está, se indica que no todos pertenecen a la misma circunferencia.</li>
+                    </ul>
+                    <br>
+
+                    <h4>Salida:</h4>
+                    <ul class="feature-list">
+                        <li>Muestra si todos los puntos están en la misma circunferencia y si es así, imprime su centro y radio.</li>
                     </ul>
                     <br>
                 </div>
@@ -209,7 +258,7 @@
             <!-- Código fuente --->
             <div id="fractal-codigo" class="demo-content">
                 <pre class="code-block">
-                    <code></code>
+                    <code data-extension="cpp"></code>
                 </pre>
             </div>
             
@@ -217,7 +266,7 @@
             <div id="fractal-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls>
-                        <source src="plataformas.mp4" type="video/mp4">
+                        <source src="./ejercicios/ejercicio3/demo_ejercicio-3.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: Generación de patrones fractales tipo flor</div>
@@ -233,9 +282,6 @@
 
     </main>
     
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script> --> 
-    
-
     <script src="./scripts/main.js" type="module"></script>
 </body>
 </html>
