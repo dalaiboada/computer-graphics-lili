@@ -132,7 +132,7 @@
                     <p>Se aprovecha la simetría de las elipses. Una elipse es simétrica en dos ejes, lo que nos permite calcular solo los puntos para una octava parte del contorno y luego reflejar esos puntos para completar la figura.</p>
                     <br>
 
-                    <img src="/computer-graphics-lili/ejercicios/ejercicio2/midpoint_circle_algorithm_animation_full.gif" alt="Ejemplo Visual del Algoritmo del Punto Medio" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+                    <img src="./ejercicios/ejercicio2/midpoint_circle_algorithm_animation_full.gif" alt="Ejemplo Visual del Algoritmo del Punto Medio" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
 
                     <h4>Algoritmo</h4>
                     <ul class="feature-list">
@@ -204,7 +204,7 @@
             </div>
             
             <!-- Explicación --->
-            <div id="fractal-explicacion" class="demo-content active">
+            <div id="circunference-explicacion" class="demo-content active">
                 <div class="explanation-content">
                     <h3 class="explanation-title">Explicación del Algoritmo</h3>
                     <p>Su estructura es que define un punto en el plano con coordenadas X y Y.</p>
@@ -265,9 +265,92 @@
             </div>
 
             <!-- Código fuente --->
-            <div id="fractal-codigo" class="demo-content">
+            <div id="circunference-codigo" class="demo-content">
                 <pre class="code-block">
                     <code data-extension="cpp"></code>
+                </pre>
+            </div>
+            
+            <!-- Video demostrativo --->
+            <div id="circunference-demo" class="demo-content">
+                <div class="video-container">
+                    <video class="demo-video" controls>
+                        <source src="./ejercicios/ejercicio3/demo_ejercicio-3_H264.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="video-caption">Demostración: A partir de n>2 coordenadas determina si es una circunferencia</div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- DEMO 4: ÁRBOL FRACTAL -->
+        <section class="demo-container">
+
+            <!-- Título --->
+            <div class="demo-header">
+                <div class="demo-title">4. Árbol Fractal</div>
+                <div class="demo-description">Figura fractal usando múltiples circunferencias</div>
+            </div>
+            
+            <!-- Botones de Tab --->
+            <div class="demo-tabs">
+                <button class="tab-button active">📚 Explicación</button>
+                <button class="tab-button">📝 Código</button>
+                <button class="tab-button">🎥 Demostración</button>
+            </div>
+            
+            <!-- Explicación --->
+            <div id="fractal-explicacion" class="demo-content active">
+                <div class="explanation-content">
+                    <h3 class="explanation-title">Explicación del Algoritmo</h3>
+                    <p><strong>Objetivo:</strong> Dibujar una figura fractal con forma de flor utilizando circunferencias y elipses concéntricas, generadas recursivamente</p>
+                    <br>
+
+                    <h4>Descripción General</h4>
+                    <p>El algoritmo usa recursión para crear una flor principal y, en la punta de cada pétalo, generar flores más pequeñas.</p>
+                    <p>Cada nivel mantiene la misma estructura, pero con menor tamaño y un color ligeramente distinto, creando un patrón fractal.</p>
+                    <br>
+
+                    <h3>Pasos principales</h3>
+                    <ul class="feature-list">
+                        <li><strong>Inicialización del lienzo:</strong> Se crea una ventana de Tkinter con un Canvas donde se dibuja la figura y un panel lateral con controles para ajustar el radio, la cantidad de pétalos y la profundidad.</li>
+                        <li>
+                            <ul><strong>Función draw_flower():</strong> 
+                                <li>Dibuja anillos concéntricos en el centro de la flor.</li>
+                                <li>Calcula la posición de cada pétalo usando funciones trigonométricas (sin, cos).</li>
+                                <li>Dibuja elipses como pétalos dispuestas radialmente.</li>
+                                <li>En cada pétalo, se invoca recursivamente draw_flower() con un radio reducido, generando flores hijas.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Colores:</strong> Se emplea el modelo HSV (matiz, saturación, brillo) para variar los tonos de forma progresiva y convertirlos a formato hexadecimal (#rrggbb).</li>
+                        <li><strong>Controles interactivos:</strong> Los sliders permiten modificar los valores de radio, profundidad y pétalos, actualizando la figura al presionar “Redibujar”.</li>
+                    </ul>
+                    <br>
+
+                    <h3>Conceptos Clave:</h3>
+                    <ul class="feature-list">
+                        <li><strong>Recursión:</strong> Cada pétalo genera una flor hija más pequeña.</li>
+                        <li><strong>Simetría radial:</strong> Los pétalos se distribuyen uniformemente en torno al centro.</li>
+                        <li><strong>Escalado progresivo:</strong> El tamaño disminuye en cada nivel.</li>
+                        <li><strong>Color en HSV:</strong> Produce degradados suaves y armónicos.</li>
+                    </ul>
+                    <br>
+
+                    <h3>Requisitos para ejecutar el sistema:</h3>
+                    <ul class="feature-list">
+                        <li>Python 3.7 o superior</li>
+                        <li>No requiere librerías externas: Solo se usan los módulos estándar <strong>tkinter</strong>, <strong>math</strong> y <strong>colorsys</strong>.</li>
+                    </ul>
+                    <br>
+
+                </div>
+            </div>
+
+            <!-- Código fuente --->
+            <div id="fractal-codigo" class="demo-content">
+                <pre class="code-block">
+                    <code data-extension="py"></code>
                 </pre>
             </div>
             
@@ -275,7 +358,7 @@
             <div id="fractal-demo" class="demo-content">
                 <div class="video-container">
                     <video class="demo-video" controls>
-                        <source src="./ejercicios/ejercicio3/demo_ejercicio-3_H264.mp4" type="video/mp4">
+                        <source src="./ejercicios/ejercicio4/demo_ejercicio-4_H264.mp4" type="video/mp4">
                     </video>
 
                     <div class="video-caption">Demostración: A partir de n>2 coordenadas determina si es una circunferencia</div>
