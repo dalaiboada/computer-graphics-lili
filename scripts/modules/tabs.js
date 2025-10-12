@@ -1,6 +1,6 @@
 /**
  * Muestra el contenido correspondiente al algoritmo seleccionado y el tipo de contenido.
- * @param {string} algoritmo - El nombre del algoritmo (ejemplo: "linea", "elipse", "fractal").
+ * @param {string} algoritmo - El nombre del algoritmo (ejemplo: "linea", "elipse", "circunference", "fractal").
  * @param {string} tabType - El tipo de contenido a mostrar ("codigo", "explicacion", "demo").
  */
 export const showTab = (algoritmo, tabType) => {
