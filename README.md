@@ -1,6 +1,6 @@
 # Algoritmos de Computación Gráfica - Proyecto Educativo UGMA
 
-Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales de gráficos por computadora utilizando diferentes tecnologías de programación. Cada algoritmo incluye una aplicación interactiva con interfaz gráfica para facilitar el aprendizaje y experimentación.
+Este proyecto implementa y demuestra visualmente cuatro algoritmos fundamentales de gráficos por computadora utilizando diferentes tecnologías de programación. Cada algoritmo incluye una aplicación interactiva con interfaz gráfica para facilitar el aprendizaje y experimentación.
 
 ## 🎯 Objetivos del Proyecto
 
