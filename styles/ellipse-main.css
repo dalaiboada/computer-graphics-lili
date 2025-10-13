@@ -1,0 +1,12 @@
+/**
+ * Archivo principal de estilos
+ * Importa todos los módulos CSS de la página de elipse
+ */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+/* Módulos */
+@import './ellipse/ellipse-base.css';
+@import './ellipse/ellipse-canvas.css';
+@import './ellipse/ellipse-tables.css';
