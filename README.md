@@ -52,6 +52,20 @@ Este proyecto implementa y demuestra visualmente tres algoritmos fundamentales d
 
 **Ubicación:** `ejercicios/ejercicio3/ejercicio-3.cpp`
 
+### 4. Generador de Flores con Patrones Geométricos
+
+**Tecnología:** Python + Tkinter
+
+**Características:**
+
+- ✅ Generación de patrones florales complejos
+- ✅ Uso de coordenadas polares para creación de pétalos
+- ✅ Control interactivo de parámetros (tamaño, número de pétalos, colores)
+- ✅ Conversión de colores HSV a RGB para gradientes suaves
+- ✅ Interfaz gráfica intuitiva con controles deslizantes
+
+**Ubicación:** `ejercicios/ejercicio4/ejercicio-4.py`
+
 ## 🖥️ Interfaz Web Educativa
 
 **Tecnología:** HTML5 + CSS3 + JavaScript (módulos ES6)
@@ -92,20 +106,22 @@ computer-graphics-lili/
 │   
 ├── 📚 ejercicios/                   # Implementaciones prácticas
 │   ├── ejercicio1/                  # Línea con interpolación RGB
-│   │   ├── ejercicio-1.py           # Código fuente principal
-│   │   ├── demo_ejercicio-1.mp4     
+│   │   ├── ejercicio-1.py           # Código fuente principal   
 │   │   └── demo_ejercicio-1_H264.mp4     # Video demostrativo optimizado
 │   │
 │   ├── ejercicio2/                  # Algoritmo de elipse
 │   │   ├── ejercicio-2.py           # Código fuente principal
-│   │   ├── ejercicio_2.py           # Versión alternativa
+│   │   ├── ejercicio_2.py           # Versión completa
 │   │   └── midpoint_circle_algorithm_animation_full.gif #Imagen de la explicacion
 │   │
-│   └── ejercicio3/                  # Análisis de circunferencias
-│       ├── ejercicio-3.cpp          # Código fuente principal
-│       ├── ejercicio_3.exe          # Ejecutable compilado
-│       ├── demo_ejercicio-1_H264.mp4     # Video demostrativo 
-│       └── demo_ejercicio-1_H264.mp4     # Video demostrativo optimizado
+│   ├── ejercicio3/                  # Análisis de circunferencias
+│   │   ├── ejercicio-3.cpp          # Código fuente principal
+│   │   ├── ejercicio_3.exe          # Ejecutable compilado
+│   │   └── demo_ejercicio-3_H264.mp4     # Video demostrativo optimizado
+│   │
+│   └── ejercicio4/                  # Generador de flores
+│       ├── ejercicio-4.py           # Código fuente principal
+│       └── demo_ejercicio-4_H264.mp4     # Video demostrativo
 └── 
 ```
 
@@ -118,7 +134,6 @@ computer-graphics-lili/
 - Python 3.7+
 - Pygame (`pip install pygame`)
 - pygame_gui (`pip install pygame-gui`)
-
 
 ### Interfaz Web
 
@@ -147,6 +162,12 @@ computer-graphics-lili/
 - **Ventajas:** Precisión matemática, aplicación directa
 - **Aplicación:** Validación de conjuntos de puntos
 - **Complejidad:** O(n) para n puntos
+
+### Generación de Patrones Florales
+
+- **Ventajas:** Creación de figuras complejas con patrones repetitivos
+- **Aplicación:** Gráficos generativos, visualización de datos
+- **Complejidad:** O(n²) donde n es el tamaño del patrón
 
 ## 🔧 Tecnologías Utilizadas
 
