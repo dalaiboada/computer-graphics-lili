@@ -55,3 +55,4 @@ def dibujar_elipse():
             x += 1
             dx = 2 * ry * ry * x
             p2 = p2 + dx - dy + (rx * rx)
+
