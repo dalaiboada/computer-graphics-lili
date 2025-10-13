@@ -77,8 +77,30 @@ Este proyecto implementa y demuestra visualmente cuatro algoritmos fundamentales
 - ✅ Integración de recursos multimedia (videos, imágenes)
 - ✅ Diseño responsivo y accesible
 - ✅ Arquitectura modular de código
+- ✅ Páginas interactivas para cada algoritmo
+- ✅ Controles intuitivos para manipulación en tiempo real
 
-**Ubicación:** `index.html`, `scripts/`, `styles/`
+**Ubicación:**
+
+- `index.html` - Página principal
+- `pages/` - Páginas específicas de algoritmos
+  - `ellipse.html` - Página interactiva del algoritmo de elipse
+- `scripts/` - Código JavaScript
+- `styles/` - Hojas de estilo
+
+### Módulo de Elipse Interactiva
+
+**Tecnología:** JavaScript + Canvas API
+
+**Características:**
+
+- ✅ Implementación interactiva del algoritmo de elipse
+- ✅ Control de parámetros en tiempo real
+- ✅ Validación de entradas
+- ✅ Retroalimentación visual inmediata
+- ✅ Diseño responsivo que se adapta a diferentes tamaños de pantalla
+
+**Ubicación:** `pages/ellipse.html`, `styles/ellipse/`
 
 ## 📁 Estructura del Proyecto
 
@@ -89,39 +111,57 @@ computer-graphics-lili/
 │   
 ├── 🎨 styles/                       # Hojas de estilo CSS
 │   ├── main.css                     # Estilos principales
-│   └── modules/                     # Estilos modulares
-│       ├── base.css
-│       ├── code-block.css
-│       ├── demo-container.css
-│       ├── header.css
-│       ├── tabs.css
-│       ├── utils.css
-│       └── video.css
+│   ├── ellipse-main.css            # Estilos específicos para la página de elipse
+│   │
+│   ├── 📂 ellipse/                     # Módulos de estilos de elipse
+│   │   ├── ellipse-base.css        # Estilos base para la página de elipse
+│   │   ├── ellipse-canvas.css      # Estilos para el área de dibujo del canvas
+│   │   └── ellipse-tables.css      # Estilos para las tablas de datos
+│   │
+│   └── 📂 modules/                     # Estilos modulares de la página principal
+│       ├── base.css                 # Estilos base
+│       ├── code-block.css           # Estilos para bloques de código
+│       ├── demo-container.css       # Contenedores de demostración
+│       ├── header.css               # Estilos de la cabecera
+│       ├── tabs.css                 # Estilos para pestañas
+│       ├── utils.css                # Utilidades de estilos
+│       └── video.css                # Estilos para videos
 │   
 ├── ⚙️ scripts/                      # Código JavaScript
 │   ├── main.js                      # Punto de entrada principal
-│   └── modules/                     # Funcionalidades modulares
-│       ├── fileLoader.js               # Cargador de archivos de los ejercicios
-│       └── tabs.js                     # Sistema de pestañas
+│   │
+│   ├── 📂 ellipse/                     # Módulos de funcionalidades de elipse
+│   │   ├── ellipse-algorithm.js    # Implementación del algoritmo de elipse
+│   │   ├── ellipse-base.js         # Funcionalidades base
+│   │   ├── ellipse-canvas.js       # Manejo del canvas de dibujo
+│   │   ├── ellipse-tables.js       # Generación de tablas de datos
+│   │   └── ellipse-ui.js           # Manejo de la interfaz de usuario
+│   │
+│   └── 📂 modules/                     # Funcionalidades modulares de la página principal
+│       ├── fileLoader.js            # Cargador de archivos de los ejercicios
+│       └── tabs.js                  # Sistema de pestañas
 │   
 ├── 📚 ejercicios/                   # Implementaciones prácticas
-│   ├── ejercicio1/                  # Línea con interpolación RGB
+│   ├── 📂 ejercicio1/                  # Línea con interpolación RGB
 │   │   ├── ejercicio-1.py           # Código fuente principal   
-│   │   └── demo_ejercicio-1_H264.mp4     # Video demostrativo optimizado
+│   │   └── demo_ejercicio-1_H264.mp4     # Video demostrativo 
 │   │
-│   ├── ejercicio2/                  # Algoritmo de elipse
-│   │   ├── ejercicio-2.py           # Código fuente principal
-│   │   ├── ejercicio_2.py           # Versión completa
-│   │   └── midpoint_circle_algorithm_animation_full.gif #Imagen de la explicacion
+│   ├── 📂 ejercicio2/                  # Algoritmo de elipse
+│   │   ├── ejercicio-2.py           # Código fuente del algoritmo
+│   │   ├── ejercicio_2.py           # Versión fuente del programa del video demostrativo
+│   │   └── midpoint_circle_algorithm_animation_full.gif 	#Imagen de la explicación
 │   │
-│   ├── ejercicio3/                  # Análisis de circunferencias
+│   ├── 📂 ejercicio3/                  # Análisis de circunferencias
 │   │   ├── ejercicio-3.cpp          # Código fuente principal
 │   │   ├── ejercicio_3.exe          # Ejecutable compilado
 │   │   └── demo_ejercicio-3_H264.mp4     # Video demostrativo optimizado
 │   │
-│   └── ejercicio4/                  # Generador de flores
+│   └── 📂 ejercicio4/                  # Generador de flores
 │       ├── ejercicio-4.py           # Código fuente principal
 │       └── demo_ejercicio-4_H264.mp4     # Video demostrativo
+│
+└── 📄 pages/                         # Páginas web interactivas
+    └── ellipse.html                # Página interactiva del algoritmo de elipse
 └── 
 ```
 
