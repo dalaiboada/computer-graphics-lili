@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujar Elipses - Algoritmo Punto Medio</title>
+
+    <!-- Fuentes externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Estilos compartidos -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Estilos específicos de elipse -->
+
+    <link rel="stylesheet" href="/styles/ellipse-main.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-draw-polygon"></i> Dibujar Elipses - Algoritmo Punto Medio</h1>
+        <div class="info-text">
+            <p><i class="fas fa-info-circle"></i> Límites: Centro X/Y (0-400), Radio X/Y (1-200)</p>
+        </div>
+
+        <div class="controls">
+            <div class="input-section">
+                <h3><i class="fas fa-crosshairs"></i> Coordenadas del Centro</h3>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="cx">Centro X (cx):</label>
+                        <input type="number" id="cx" value="200" min="0" max="400" placeholder="Coordenada X">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="cy">Centro Y (cy):</label>
+                        <input type="number" id="cy" value="200" min="0" max="400" placeholder="Coordenada Y">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-section">
+                <h3><i class="fas fa-expand-alt"></i> Radios de la Elipse</h3>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="rx">Radio X (rx):</label>
+                        <input type="number" id="rx" value="80" min="1" max="200" placeholder="Radio horizontal">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="ry">Radio Y (ry):</label>
+                        <input type="number" id="ry" value="50" min="1" max="200" placeholder="Radio vertical">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="btnDibujar">
+                    <i class="fas fa-draw-polygon"></i> Dibujar Elipse
+                </button>
+                <button id="btnLimpiar">
+                    <i class="fas fa-trash-alt"></i> Limpiar
+                </button>
+            </div>
+            
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </div>
+        
+        <canvas id="lienzo" width="400" height="400"></canvas>
+    </div>
+
+    <!-- Tablas de datos del algoritmo -->
+    <div class="tables-container">
+        <div class="table-section">
+            <h2><i class="fas fa-table"></i> Región 1 - Datos del Algoritmo</h2>
+            <div class="table-wrapper">
+                <table class="data-table" id="tabla-region1">
+                    <thead>
+                        <tr>
+                            <th>Iteración</th>
+                            <th>(x, y) Actual</th>
+                            <th>P1</th>
+                            <th>Siguiente (x, y)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="empty-table">
+                                <i class="fas fa-chart-line"></i>
+                                Dibuja una elipse para ver los datos del algoritmo
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h2><i class="fas fa-table"></i> Región 2 - Datos del Algoritmo</h2>
+            <div class="table-wrapper">
+                <table class="data-table" id="tabla-region2">
+                    <thead>
+                        <tr>
+                            <th>Iteración</th>
+                            <th>(x, y) Actual</th>
+                            <th>P2</th>
+                            <th>Siguiente (x, y)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="empty-table">
+                                <i class="fas fa-chart-line"></i>
+                                Dibuja una elipse para ver los datos del algoritmo
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/scripts/ellipse/ellipse-algorithm.js"></script>
+    <script src="/scripts/ellipse/ellipse-canvas.js"></script>
+    <script src="/scripts/ellipse/ellipse-tables.js"></script>
+    <script src="/scripts/ellipse/ellipse-ui.js"></script>
+    <script src="/scripts/ellipse/ellipse-base.js"></script>
+</body>
+</html>

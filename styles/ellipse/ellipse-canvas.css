@@ -1,0 +1,133 @@
+.controls {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.input-section {
+    margin-bottom: 25px;
+}
+
+.input-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+input {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button i {
+    font-size: 1.1rem;
+}
+
+#btnDibujar {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#btnDibujar:hover {
+    background-color: #3a5bef;
+    transform: translateY(-2px);
+}
+
+#btnLimpiar {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+#btnLimpiar:hover {
+    background-color: #ff3030;
+    transform: translateY(-2px);
+}
+
+canvas {
+    border: 2px solid var(--border-color);
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .controls {
+        padding: 15px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-group {
+        margin-bottom: 12px;
+    }
+
+    input {
+        padding: 10px 12px;
+    }
+}
